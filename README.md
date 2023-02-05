@@ -1,5 +1,5 @@
 ![latex_fantasy](https://user-images.githubusercontent.com/82369153/216826784-ec5f5737-07f8-4cd4-9502-5b0f51568211.png)
-<div align="center">This repo is meant to be a useful non-comprehensive list of things that you will use while writing a LaTeX document.<br>
+<div align="center">This repo is meant to be a useful non-comprehensive cheat sheet that you will use while writing a LaTeX document.<br>
 For everything alse go to the dedicated <a href="https://en.wikibooks.org/wiki/LaTeX">LaTeX Wikibook page</a> or <a href="https://tex.stackexchange.com/">StackExchange page</a>
 </div>
 
