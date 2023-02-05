@@ -33,10 +33,10 @@ Package required:
 ![single_figure](https://user-images.githubusercontent.com/82369153/216826809-b88f1882-fe25-4338-96b9-008813f1a8fd.png)
 ```
 \begin{figure}[ht]
-    \centering
+  \centering
     \includegraphics[width = 1\textwidth]{example-image}
-    \caption{Insert caption here.}
-    \label{fig:figure_name}
+  \caption{Insert caption here.}
+  \label{fig:figure_name}
 \end{figure}
 ```
 The figure is added by using ```\includegraphics``` command which takes as argument the size of the figure (that can be adjusted using the textwdith - e.g., by applying ```[width = 0.5\textwidth]``` the figure will be 50% of the textwidth) and the file path ```{example-image}```.
@@ -76,16 +76,24 @@ In the following example more sub figures have been added by using the ```\subfl
 ```
 \begin{figure}[ht]
   \centering
-    \subfloat[Figure 1]{\includegraphics[height=2cm, width=2cm]{example-image}\label{fig:sub_figure_name}}
+    \subfloat[Figure 1]
+    {\includegraphics[height=2cm, width=2cm]{example-image}
+    \label{fig:sub_figure_name}}
   \hfil
-    \subfloat[Figure 2]{\includegraphics[height=2cm, width=2cm]{example-image}\label{fig:sub_figure_name}}
+    \subfloat[Figure 2]
+    {\includegraphics[height=2cm, width=2cm]{example-image}
+    \label{fig:sub_figure_name}}
 
-    \subfloat[Figure 3]{\includegraphics[height=2cm, width=2cm]{example-image}\label{fig:sub_figure_name}}
+    \subfloat[Figure 3]
+    {\includegraphics[height=2cm, width=2cm]{example-image}
+    \label{fig:sub_figure_name}}
   \hfil
-    \subfloat[Figure 4]{\includegraphics[height=2cm, width=2cm]{example-image}\label{fig:sub_figure_name}}
-\vspace{2mm}
-\caption{Insert caption here.}
-\label{fig:multiple_sub_figures_name}
+    \subfloat[Figure 4]
+    {\includegraphics[height=2cm, width=2cm]{example-image}
+    \label{fig:sub_figure_name}}
+  \vspace{2mm}
+  \caption{Insert caption here.}
+  \label{fig:multiple_sub_figures_name}
 \end{figure}
 ```
 As you can see a vertical space of ```2mm``` has been added. The vertical space ```\vspace{2mm}``` has been applied between the last row and the caption.
