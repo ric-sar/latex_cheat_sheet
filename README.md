@@ -16,8 +16,9 @@ For everything alse go to the dedicated <a href="https://en.wikibooks.org/wiki/L
     + [Complex table](#complex-table)
 - [Math](#math)
     + [How to split math equation on multiple lines](#how-to-split-math-equation-on-multiple-lines)
-- [Useful misc arguments](#useful-misc-arguments)
+- [Bibliography](#bibliography)
   * [How to properly cite an arXiv contribution on IEEE](#how-to-properly-cite-an-arxiv-contribution-on-ieee)
+- [Useful misc arguments](#useful-misc-arguments)
   * [How to highlight text for a paper review](#how-to-highlight-text-for-a-paper-review)
     + [Bypass citation](#bypass-citation)
     + [Bypass reference](#bypass-reference)
@@ -159,9 +160,17 @@ Required package:
 ```
 Write equations inside the ```split``` command and split equations with ```\\``` command to go to the new line.
 
-# Useful misc arguments
+# Bibliography
+Bibligraphy management is one of the best feature of LaTeX, just put these two lines at the end of the document
+```
+\bibliographystyle{ieeetr}
+\bibliography{refs.bib}
+```
+Create a new file ```refs.bib``` where you will add all your citation and LaTeX will compile the bibliography for you!
+Also, you can select within the seven bibliography styles without any effort: ```plain```, ```acm```, ```ieeetr```, ```alpha```, ```abbrv``` and ```siam```.
+
 ## How to properly cite an arXiv contribution on IEEE
-If you have just started your adventure in the research field there is a high probabily that you have already encountered [arXiv](https://arxiv.org/). [arXiv](https://arxiv.org/) is a free distribution service and an open-access archive scholarly articles, although you can expoert directly the Bibtex formatted citation you need to properly cite the article by adding a the arXiv identifier to the note of the citation.
+If you have just started your adventure in the research field there is a high probabily that you have already encountered [arXiv](https://arxiv.org/). [arXiv](https://arxiv.org/) is a free distribution service and an open-access archive scholarly articles, although you can expoert directly the BibTeX formatted citation you need to properly cite the article by adding a the arXiv identifier to the note of the citation.
 For instance, for the paper [Attention is all you need](https://arxiv.org/abs/1706.03762) the formatted citation is the following:
 ```
 @misc{https://doi.org/10.48550/arxiv.1706.03762,
@@ -176,6 +185,9 @@ For instance, for the paper [Attention is all you need](https://arxiv.org/abs/17
 }
 ```
 Just add the related arXiv identifier with  ```note = {arXiv:1706.03762}```.
+
+# Useful misc arguments
+Here you will find useful misc arguments:
 
 ## How to highlight text for a paper review
 During a paper review will be requested to highlight all the changes. A LaTeX student will be prone to to use the classic ```\textcolor{color}{text}``` command from ```\usepackage{xcolor}``` package but it will create such a monster document with an infinite repetition of ```\textcolor``` command. Also, if we need to deliver two version of the same document, e.g., one with changes highlithed and one without, will make the job tedious and endless.
