@@ -17,7 +17,8 @@ For TeX materials (e.g., package details) visit the <a href="https://www.ctan.or
     + [Simple table](#simple-table)
     + [Complex table](#complex-table)
 - [Math](#math)
-    + [How to split math equation on multiple lines](#how-to-split-math-equation-on-multiple-lines)
+    + [How to split math equation on multiple lines with split](#how-to-split-math-equation-on-multiple-lines-with-split)
+    + [How to split math equation on multiple lines with align](#how-to-split-math-equation-on-multiple-lines-with-align)
 - [Bibliography](#bibliography)
   * [How to properly cite an arXiv contribution on IEEE](#how-to-properly-cite-an-arxiv-contribution-on-ieee)
 - [Useful misc arguments](#useful-misc-arguments)
@@ -151,7 +152,7 @@ While, here you can find cheat sheets of math symbols:
 * [Kapeli - LaTeX Math Symbols](https://kapeli.com/cheat_sheets/LaTeX_Math_Symbols.docset/Contents/Resources/Documents/index)
 * [Tilburg ScienceHub - Cheatsheet for LaTeX Math Commands](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/)
 
-### How to split math equation on multiple lines
+### How to split math equation on multiple lines with split
 Sometimes you need to split a math equation on multiple lines, one possible way is to use the package ```amsmath``` to display equations and ```amsfonts``` which is an extended set of fonts for use in mathematics.
 Required package:
 ```
@@ -171,6 +172,19 @@ Required package:
 \end{equation}
 ```
 Write equations inside the ```split``` command and split equations with ```\\``` command to go to the new line.
+The progressive number to reference the equation will be automatically inserted in the middle of the split.
+
+### How to split math equation on multiple lines with align
+Alternatively, you can use ```align``` to split equations.
+```
+\begin{align} 
+    \upsilon (s) = {\mathbb{E}}\left [ G_t | S_t = s \right ] \nonumber \\ 
+    = {\mathbb{E}}\left [ R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + ...| S_t = s \right ] \nonumber \\
+    ... \nonumber \\
+    = {\mathbb{E}}\left [ R_{t+1} + \gamma \upsilon S_{t+1} | S_t = s \right ] \label{eq:eq_name}
+\end{align}
+```
+The difference with ```split``` lives in adding the command ```\nonumber``` before going to a new line and the corresponding progressive number to reference the equation can be inserted where the user wants (i.e., in the corresponding line where the label is put, in the example in the last line). 
 
 # Bibliography
 Bibligraphy management is one of the best feature of LaTeX, just put these two lines at the end of the document
