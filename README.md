@@ -1,11 +1,13 @@
 ![latex_logo](https://user-images.githubusercontent.com/82369153/216924875-a95e02b0-020e-4169-99c0-ceb1107c54ac.png)
 <div align="center">This repo is meant to be a useful non-comprehensive LaTeX Cheat Sheet that you will use while writing a LaTeX document.<br>
-For everything alse go to the dedicated <a href="https://en.wikibooks.org/wiki/LaTeX">LaTeX Wikibook page</a> or <a href="https://tex.stackexchange.com/">StackExchange page</a>
+For everything alse go to the dedicated <a href="https://en.wikibooks.org/wiki/LaTeX">LaTeX Wikibook page</a> or <a href="https://tex.stackexchange.com/">StackExchange page.</a>.<br>
+For TeX materials (e.g., package details) visit the <a href="https://www.ctan.org/">Comprehensive TeX Archive Network (CTAN)</a>.
 </div>
 
 ---
 
 **Table of contents**
+- [Online vs Offline](#online-vs-offline)
 - [Figure](#figure)
     + [Single figure](#single-figure)
     + [Multiple sub figures](#multiple-sub-figures)
@@ -23,6 +25,15 @@ For everything alse go to the dedicated <a href="https://en.wikibooks.org/wiki/L
     + [Bypass citation](#bypass-citation)
     + [Bypass reference](#bypass-reference)
   * [Show page layout](#show-page-layout)
+
+# Online vs Offline
+If you are a fresh LaTeX user, choosing the right TeX editor for the first time is not an easy task. In my opinion the best way to approach LaTeX is by using [Overleaf](https://www.overleaf.com/).
+Overleaf is an online and collaborative LaTeX editor, which means that you only need a web browser and an Internet connection to work. You do not need to configure or install nothing, just create an account and start creating a new project, Overleaf will handle everything for you. The free account is enough for starters, if you need more compile timeout or want to add more collaborators to the project or integrations with [GitHub](https://github.com/), [Dropbox](https://www.dropbox.com), [Mendely](https://www.mendeley.com/) or [Zotero](https://www.zotero.org/) check the [Plans and Pricing section](https://www.overleaf.com/user/subscription/plans).
+
+While, if you are a geek and want to have everything under control you can choose between many editors like: [Texmaker](https://www.xm1math.net/texmaker/), [TeXWorks](https://www.tug.org/texworks/), [Lyx](https://www.lyx.org/Home) or [TeXStudio](https://texstudio.sourceforge.net/).
+On the other hand is possible to host a [community edition of Overleaf](https://github.com/overleaf/overleaf) on your on server.
+
+It is worth to mention alternatives like: [Papeeria](https://papeeria.com/), [Authorea](https://www.authorea.com/) or [CoCalc](https://cocalc.com/).
 
 # Figure
 Some read the text others look at the pictures. And we should be able to plot figures on a LaTeX document:
