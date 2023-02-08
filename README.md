@@ -1,7 +1,8 @@
 ![latex_logo](https://user-images.githubusercontent.com/82369153/216924875-a95e02b0-020e-4169-99c0-ceb1107c54ac.png)
 <div align="center">This repo is meant to be a useful non-comprehensive LaTeX Cheat Sheet that you will use while writing a LaTeX document.<br>
 For everything alse go to the dedicated <a href="https://en.wikibooks.org/wiki/LaTeX">LaTeX Wikibook page</a> or <a href="https://tex.stackexchange.com/">StackExchange page.</a>.<br>
-For TeX materials (e.g., package details) visit the <a href="https://www.ctan.org/">Comprehensive TeX Archive Network (CTAN)</a>.
+For TeX materials (e.g., package details) visit the <a href="https://www.ctan.org/">Comprehensive TeX Archive Network (CTAN)</a>.<br>
+For starters, I recommend to read first <a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">Learn LaTeX in 30 minutes</a>
 </div>
 
 ---
@@ -27,6 +28,8 @@ For TeX materials (e.g., package details) visit the <a href="https://www.ctan.or
     + [Bypass citation](#bypass-citation)
     + [Bypass reference](#bypass-reference)
   * [Show page layout](#show-page-layout)
+  
+---
 
 # Online vs Offline
 If you are a fresh LaTeX user, choosing the right TeX editor for the first time is not an easy task. In my opinion the best way to approach LaTeX is by using [Overleaf](https://www.overleaf.com/).
@@ -260,3 +263,6 @@ While writing a paper (for instance in the traditional two-column layout) we mig
 \renewcommand*\ShowFrameColor{\color{insert_color}}
 ```
 By adding the showframe package we decide how many points the frame thickness will be with the command ```\renewcommand\ShowFrameLinethickness{0.15pt}``` (i.e., for a frame of 0.15pt) and the corresponding color with the command ```\renewcommand*\ShowFrameColor{\color{red}}``` (i.e., for red frame).
+
+The following is an example of [IEEE Access Template](https://www.overleaf.com/latex/templates/ieee-access-latex-template/cdxrhtbjgszv) with page layout borders:
+![IEEE_Access_LaTeX_template_Pagina_1](https://user-images.githubusercontent.com/82369153/217602631-c06abbc8-65a3-4d1f-970b-85ca9d036949.jpg)
