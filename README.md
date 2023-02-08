@@ -22,6 +22,7 @@ For everything alse go to the dedicated <a href="https://en.wikibooks.org/wiki/L
   * [How to highlight text for a paper review](#how-to-highlight-text-for-a-paper-review)
     + [Bypass citation](#bypass-citation)
     + [Bypass reference](#bypass-reference)
+  * [Show page layout](#show-page-layout)
 
 # Figure
 Some read the text others look at the pictures. And we should be able to plot figures on a LaTeX document:
@@ -190,9 +191,15 @@ Just add the related arXiv identifier with  ```note = {arXiv:1706.03762}```.
 Here you will find useful misc arguments:
 
 ## How to highlight text for a paper review
-During a paper review will be requested to highlight all the changes. A LaTeX student will be prone to to use the classic ```\textcolor{color}{text}``` command from ```\usepackage{xcolor}``` package but it will create such a monster document with an infinite repetition of ```\textcolor``` command. Also, if we need to deliver two version of the same document, e.g., one with changes highlithed and one without, will make the job tedious and endless.
-One possible solution is to use the ```\usepackage{soul} ``` package:
+During a paper review will be requested to highlight all the changes.
+Required packages:
+```
+\usepackage{soul}
+\usepackage{xcolor}
+```
 With ```soul``` we can highlight text lightning fast with ```\hl{text to highlight}``` command, when we will not need the highlights just put the package into comment with ```%\usepackage{soul}``` and all the highlights will disappear without generating errors or warnings.
+The default highlighting color is yellow, it can be changed by setting the color as ```\sethlcolor{color_name}``` (i.e., for highlighting in red ```\sethlcolor{red}```).
+
 But what happen if we want to highlight citations or references?
 
 ### Bypass citation
@@ -206,3 +213,13 @@ While, highlighting references (like figures, tables or math equations) is much 
 ```
 \hl{Fig. {\ref{fig:figure_to_refer}}}
 ```
+
+## Show page layout
+While writing a paper (for instance in the traditional two-column layout) we might be interested if we can make better styling choice by knowing the margin of the chosen template. In this case the package showframe will help us:
+```
+\usepackage{showframe}
+
+\renewcommand\ShowFrameLinethickness{insert_thickness}
+\renewcommand*\ShowFrameColor{\color{insert_color}}
+```
+By adding the showframe package we decide how many points the frame thickness will be with the command ```\renewcommand\ShowFrameLinethickness{0.15pt}``` (i.e., for a frame of 0.15pt) and the corresponding color with the command ```\renewcommand*\ShowFrameColor{\color{red}}``` (i.e., for red frame).
