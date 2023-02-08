@@ -8,6 +8,7 @@ For TeX materials (e.g., package details) visit the <a href="https://www.ctan.or
 
 **Table of contents**
 - [Online vs Offline](#online-vs-offline)
+- [How to add citation and reference](#how-to-add-citation-and-reference)
 - [Figure](#figure)
     + [Single figure](#single-figure)
     + [Multiple sub figures](#multiple-sub-figures)
@@ -35,6 +36,17 @@ While, if you are a geek and want to have everything under control you can choos
 On the other hand is possible to host a [community edition of Overleaf](https://github.com/overleaf/overleaf) on your on server.
 
 It is worth to mention alternatives like: [Papeeria](https://papeeria.com/), [Authorea](https://www.authorea.com/) or [CoCalc](https://cocalc.com/).
+
+# How to add citation and reference
+Adding citation and reference is the main and most profilic advantage of LaTeX and are the first commands that you will learn during your journey.
+After having added your citation in the bibliography you can cite it just adding the following command in the text:
+```\cite{what_we_want_to_cite}```
+
+While, after having added your tables, figures, equations and so on, use the following command to add reference in the text:
+```\ref{what_we_want_to_refer}```
+
+As a trick, I suggest to you to add to the command ```\label{}``` a little tag to distinguish between figures, tables, equations, and so on.
+E.g. figures can be labelled as ```\label{fig:figure_name}```, tables as ```\label{tab:table_name}``` or equations ```\label{eq:equation_name}```, this will help you during writing to remember to what object are adding the reference.
 
 # Figure
 Some read the text others look at the pictures. And we should be able to plot figures on a LaTeX document:
