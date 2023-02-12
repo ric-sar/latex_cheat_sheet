@@ -9,7 +9,15 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
 
 **Table of contents**
 - [Online vs Offline](#online-vs-offline)
-- [How to add citation and reference](#how-to-add-citation-and-reference)
+- [Text](#text)
+  * [Bold](#bold)
+  * [Italic](#italic)
+  * [Underline](#underline)
+  * [Change color](#change-color)
+  * [Formatting mix](#formatting-mix)
+  * [Highlight](#highlight)
+    + [Bypass citation](#bypass-citation)
+    + [Bypass reference](#bypass-reference)
 - [Figure](#figure)
     + [Single figure](#single-figure)
     + [Multiple sub figures](#multiple-sub-figures)
@@ -23,10 +31,8 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
     + [How to split math equation on multiple lines with align](#how-to-split-math-equation-on-multiple-lines-with-align)
 - [Bibliography](#bibliography)
   * [How to properly cite an arXiv contribution on IEEE](#how-to-properly-cite-an-arxiv-contribution-on-ieee)
+- [How to add citation and reference](#how-to-add-citation-and-reference)
 - [Useful misc arguments](#useful-misc-arguments)
-  * [How to highlight text for a paper review](#how-to-highlight-text-for-a-paper-review)
-    + [Bypass citation](#bypass-citation)
-    + [Bypass reference](#bypass-reference)
   * [Show page layout](#show-page-layout)
   
 ---
@@ -40,16 +46,55 @@ On the other hand is possible to host a [community edition of Overleaf](https://
 
 It is worth to mention alternatives like: [Papeeria](https://papeeria.com/), [Authorea](https://www.authorea.com/) or [CoCalc](https://cocalc.com/).
 
-# How to add citation and reference
-Adding citation and reference is the main and most profilic advantage of LaTeX and are the first commands that you will learn during your journey.
-After having added your citation in the bibliography you can cite it just adding the following command in the text:
-```\cite{what_we_want_to_cite}```
+# Text
+Here we present basic text formatting:
 
-While, after having added your tables, figures, equations and so on, use the following command to add reference in the text:
-```\ref{what_we_want_to_refer}```
+### Bold
+To bold text in LaTeX we simply use the command ```\textbf{This text is in bold}```.
 
-As a trick, I suggest to you to add to the command ```\label{}``` a little tag to distinguish between figures, tables, equations, and so on.
-E.g. figures can be labelled as ```\label{fig:figure_name}```, tables as ```\label{tab:table_name}``` or equations ```\label{eq:equation_name}```, this will help you during writing to remember to what object are adding the reference.
+### Italic
+To format text in Italic just use the command ```\textit{It's-a me, Mario!}```.
+
+### Underline
+The same apply to underline text with the command ```\underline{Text underlined}```.
+
+### Change color
+Sometimes we need to change color of text parts, we only need to use the ```xcolor``` package.
+Require package:
+```
+\usepackage{xcolor}
+```
+And inside the text we apply the color, e.g., ```this text is not in red and \textcolor{red}{this text is in red}```.
+The color can be changed inside the command ```\textcolor{color_to_use}```.
+
+Further colors and commands to used inside the ```textcolor``` package can be found [here](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/xcolor/xcolor.pdf).
+
+### Formatting mix
+Combining commands will help us to a format mix, for istance we want to underline and bold a text we will use ```\underline{\textbf{This text is underlined and bold}}```.
+
+## Highlight
+Highlighting text is fundamental, espercially during a paper review will be requested to highlight all the changes.
+Required packages:
+```
+\usepackage{soul}
+\usepackage{xcolor}
+```
+With ```soul``` we can highlight text lightning fast with ```\hl{text to highlight}``` command, when we will not need the highlights just put the package into comment with ```%\usepackage{soul}``` and all the highlights will disappear without generating errors or warnings.
+The default highlighting color is yellow, it can be changed by setting the color as ```\sethlcolor{color_name}``` (i.e., for highlighting in red ```\sethlcolor{red}```).
+
+But what happen if we want to highlight citations or references?
+
+### Bypass citation
+To highlight citations and bypass all the warnings we need to put a ```\mbox``` command like this:
+```
+\mbox{\cite{paper_to_cite}}
+```
+
+### Bypass reference
+While, highlighting references (like figures, tables or math equations) is much easier, just put the reference between curly brackets to avoid warnings like so:
+```
+\hl{Fig. {\ref{fig:figure_to_refer}}}
+```
 
 # Figure
 Some read the text others look at the pictures. And we should be able to plot figures on a LaTeX document:
@@ -227,32 +272,19 @@ For instance, for the paper [Attention is all you need](https://arxiv.org/abs/17
 ```
 Just add the related arXiv identifier with  ```note = {arXiv:1706.03762}```.
 
+# How to add citation and reference
+Adding citation and reference is the main and most profilic advantage of LaTeX and are the first commands that you will learn during your journey.
+After having added your citation in the bibliography you can cite it just adding the following command in the text:
+```\cite{what_we_want_to_cite}```
+
+While, after having added your tables, figures, equations and so on, use the following command to add reference in the text:
+```\ref{what_we_want_to_refer}```
+
+As a trick, I suggest to you to add to the command ```\label{}``` a little tag to distinguish between figures, tables, equations, and so on.
+E.g. figures can be labelled as ```\label{fig:figure_name}```, tables as ```\label{tab:table_name}``` or equations ```\label{eq:equation_name}```, this will help you during writing to remember to what object are adding the reference.
+
 # Useful misc arguments
 Here you will find useful misc arguments:
-
-## How to highlight text for a paper review
-During a paper review will be requested to highlight all the changes.
-Required packages:
-```
-\usepackage{soul}
-\usepackage{xcolor}
-```
-With ```soul``` we can highlight text lightning fast with ```\hl{text to highlight}``` command, when we will not need the highlights just put the package into comment with ```%\usepackage{soul}``` and all the highlights will disappear without generating errors or warnings.
-The default highlighting color is yellow, it can be changed by setting the color as ```\sethlcolor{color_name}``` (i.e., for highlighting in red ```\sethlcolor{red}```).
-
-But what happen if we want to highlight citations or references?
-
-### Bypass citation
-To highlight citations and bypass all the warnings we need to put a ```\mbox``` command like this:
-```
-\mbox{\cite{paper_to_cite}}
-```
-
-### Bypass reference
-While, highlighting references (like figures, tables or math equations) is much easier, just put the reference between curly brackets to avoid warnings like so:
-```
-\hl{Fig. {\ref{fig:figure_to_refer}}}
-```
 
 ## Show page layout
 While writing a paper (for instance in the traditional two-column layout) we might be interested if we can make better styling choice by knowing the margin of the chosen template. In this case the package showframe will help us:
