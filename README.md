@@ -18,6 +18,7 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
   * [Highlight](#highlight)
     + [Bypass citation](#bypass-citation)
     + [Bypass reference](#bypass-reference)
+  * [Footnote](#footnote)
 - [Figure](#figure)
     + [Single figure](#single-figure)
     + [Multiple sub figures](#multiple-sub-figures)
@@ -95,6 +96,9 @@ While, highlighting references (like figures, tables or math equations) is much 
 ```
 \hl{Fig. {\ref{fig:figure_to_refer}}}
 ```
+
+## Footnote
+To add a footnote just write the text inside the command ```\footnote{add footnote here}```, the footnote counter will be inserted automatically and the text will appear in the footer.
 
 # Figure
 Some read the text others look at the pictures. And we should be able to plot figures on a LaTeX document:
