@@ -180,7 +180,7 @@ As you can see a vertical space of ```2mm``` has been added. The vertical space 
 
 #### 2x2 One caption by row
 In the following example more sub figures have been added by using the ```\subfigure``` command but there is only one caption per row:
-![2x2_single_sub_caption_by_row](https://user-images.githubusercontent.com/82369153/222773482-e1c5fa65-9c8b-4cce-9c81-7a341bd92f2e.png)
+![2x2_single_sub_caption_by_row](https://user-images.githubusercontent.com/82369153/222807912-c2528449-a6cb-4176-b0bf-db4cd12d9efc.png)
 ```
 \begin{figure}[ht]
     \centering
