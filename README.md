@@ -24,6 +24,7 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
   * [Multiple sub figures](#multiple-sub-figures)
     + [1x2](#1x2)
     + [2x2](#2x2)
+    + [2x2 one caption](#2x2-one-caption)
 - [Table](#table)
   * [Simple table](#simple-table)
   * [Complex table](#complex-table)
@@ -175,6 +176,31 @@ In the following example more sub figures have been added by using the ```\subfl
 \end{figure}
 ```
 As you can see a vertical space of ```2mm``` has been added. The vertical space ```\vspace{2mm}``` has been applied between the last row and the caption.
+
+#### 2x2 One caption
+In the following example more sub figures have been added by using the ```\subfloat``` command but there is only one caption per row:
+![2x2onecaption](https://user-images.githubusercontent.com/82369153/222750911-276d2417-b35d-4d36-b576-174d03d67039.png)
+```
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.45\linewidth]{example-image}
+        \hfill
+        \includegraphics[width=0.45\linewidth]{example-image}
+        \caption{Insert sub-caption here.}
+    \end{subfigure}
+    \vskip\baselineskip
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.45\linewidth]{example-image}
+        \hfill
+        \includegraphics[width=0.45\linewidth]{example-image}
+        \caption{Insert sub-caption here.}
+    \end{subfigure}
+    \caption{Insert main caption here.}
+\end{figure}
+```
 
 # Table
 Tables, tables and tables... The killer of every LaTeX student!
