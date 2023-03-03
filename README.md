@@ -24,7 +24,8 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
   * [Multiple sub figures](#multiple-sub-figures)
     + [1x2](#1x2)
     + [2x2](#2x2)
-    + [2x2 one caption](#2x2-one-caption)
+    + [2x2 one caption by row](#2x2-one-caption-by-row)
+    + [2x2 one caption by col](#2x2-one-caption-by-col)
 - [Table](#table)
   * [Simple table](#simple-table)
   * [Complex table](#complex-table)
@@ -177,29 +178,62 @@ In the following example more sub figures have been added by using the ```\subfl
 ```
 As you can see a vertical space of ```2mm``` has been added. The vertical space ```\vspace{2mm}``` has been applied between the last row and the caption.
 
-#### 2x2 One caption
-In the following example more sub figures have been added by using the ```\subfloat``` command but there is only one caption per row:
-![2x2onecaption](https://user-images.githubusercontent.com/82369153/222750911-276d2417-b35d-4d36-b576-174d03d67039.png)
+#### 2x2 One caption by row
+In the following example more sub figures have been added by using the ```\subfigure``` command but there is only one caption per row:
+![2x2_single_sub_caption_by_row](https://user-images.githubusercontent.com/82369153/222773482-e1c5fa65-9c8b-4cce-9c81-7a341bd92f2e.png)
 ```
 \begin{figure}[ht]
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
-        \includegraphics[width=0.45\linewidth]{example-image}
+        \includegraphics[width=0.475\linewidth]{example-image}\label{fig:sub_figure_name}
         \hfill
-        \includegraphics[width=0.45\linewidth]{example-image}
-        \caption{Insert sub-caption here.}
+        \includegraphics[width=0.475\linewidth]{example-image}\label{fig:sub_figure_name}
+        \caption{Insert sub-caption of the first row.}
     \end{subfigure}
     \vskip\baselineskip
     \begin{subfigure}[b]{\textwidth}
         \centering
-        \includegraphics[width=0.45\linewidth]{example-image}
+        \includegraphics[width=0.475\linewidth]{example-image}\label{fig:sub_figure_name}
         \hfill
-        \includegraphics[width=0.45\linewidth]{example-image}
-        \caption{Insert sub-caption here.}
+        \includegraphics[width=0.475\linewidth]{example-image}\label{fig:sub_figure_name}
+        \caption{Insert sub-caption of the second row.}
     \end{subfigure}
     \caption{Insert main caption here.}
+    \label{fig:figure_name}
 \end{figure}
+```
+
+#### 2x2 One caption by col
+In the following example more sub figures have been added by using the ```\subfigure``` command but there is only one caption per col:
+![2x2_single_sub_caption_by_col](https://user-images.githubusercontent.com/82369153/222793041-7116b7e3-0f54-4c0b-b78e-a256ddc1370a.png)
+```
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image}\label{fig:sub_figure_name}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image}\label{fig:sub_figure_name}
+    \end{subfigure}
+    \vskip\baselineskip
+    \begin{subfigure}[b]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image}\label{fig:sub_figure_name}
+        \caption{Insert sub-caption of the first col.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image}\label{fig:sub_figure_name}
+        \caption{Insert sub-caption of the second col.}
+    \end{subfigure}
+    \caption{Insert main caption here.}
+    \label{fig:figure_name}
+  \end{figure}
 ```
 
 # Table
