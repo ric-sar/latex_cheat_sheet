@@ -24,8 +24,8 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
   * [Multiple sub figures](#multiple-sub-figures)
     + [1x2](#1x2)
     + [2x2](#2x2)
-    + [2x2 one caption by row](#2x2-one-caption-by-row)
-    + [2x2 one caption by col](#2x2-one-caption-by-col)
+    + [2x2 one caption per row](#2x2-one-caption-per-row)
+    + [2x2 one caption per col](#2x2-one-caption-per-col)
 - [Table](#table)
   * [Simple table](#simple-table)
   * [Complex table](#complex-table)
@@ -178,7 +178,7 @@ In the following example more sub figures have been added by using the ```\subfl
 ```
 As you can see a vertical space of ```2mm``` has been added. The vertical space ```\vspace{2mm}``` has been applied between the last row and the caption.
 
-#### 2x2 One caption by row
+#### 2x2 One caption per row
 In the following example more sub figures have been added by using the ```\subfigure``` command but there is only one caption per row:
 ![2x2_single_sub_caption_by_row](https://user-images.githubusercontent.com/82369153/222807912-c2528449-a6cb-4176-b0bf-db4cd12d9efc.png)
 ```
@@ -204,7 +204,7 @@ In the following example more sub figures have been added by using the ```\subfi
 \end{figure}
 ```
 
-#### 2x2 One caption by col
+#### 2x2 One caption per col
 In the following example more sub figures have been added by using the ```\subfigure``` command but there is only one caption per col:
 ![2x2_single_sub_caption_by_col](https://user-images.githubusercontent.com/82369153/222793041-7116b7e3-0f54-4c0b-b78e-a256ddc1370a.png)
 ```
