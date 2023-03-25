@@ -111,7 +111,7 @@ To align text we use the environment ```ragged2e``` which is easy and fast to us
 To align text on the left use ```flushleft```:
 ```
 \begin{flushleft}
-Insert the text here.
+  Insert the text here.
 \end{flughleft}
 ```
 
@@ -119,7 +119,7 @@ Insert the text here.
 To align text on the centre use ```center```:
 ```
 \begin{center}
-Insert the text here.
+  Insert the text here.
 \end{center}
 ```
 
@@ -127,7 +127,7 @@ Insert the text here.
 To align text on the right use ```flushright```:
 ```
 \begin{flushright}
-Insert the text here.
+  Insert the text here.
 \end{flughright}
 ```
 
@@ -135,7 +135,7 @@ Insert the text here.
 To justify the tex use ```justify```:
 ```
 \begin{justify}
-Insert the text here.
+  Insert the text here.
 \end{justify}
 ```
 
