@@ -43,6 +43,7 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
 - [Bibliography](#bibliography)
   * [How to properly cite an arXiv contribution on IEEE](#how-to-properly-cite-an-arxiv-contribution-on-ieee)
 - [How to add citation and reference](#how-to-add-citation-and-reference)
+  * [Cross reference from an external document](#cross-reference-from-an-external-document)
 - [Useful misc arguments](#useful-misc-arguments)
   * [Show page layout](#show-page-layout)
   
@@ -378,7 +379,7 @@ Alternatively, you can use ```align``` to split equations.
 The difference with ```split``` lives in adding the command ```\nonumber``` before going to a new line and the corresponding progressive number to reference the equation can be inserted where the user wants (i.e., in the corresponding line where the label is put, in the example in the last line). 
 
 # Bibliography
-Bibligraphy management is one of the best feature of LaTeX, just put these two lines at the end of the document
+Bibligraphy management is one of the best feature of LaTeX, just put these two lines at the end of the document:
 ```
 \bibliographystyle{ieeetr}
 \bibliography{refs.bib}
@@ -413,6 +414,58 @@ While, after having added your tables, figures, equations and so on, use the fol
 
 As a trick, I suggest to you to add to the command ```\label{}``` a little tag to distinguish between figures, tables, equations, and so on.
 E.g. figures can be labelled as ```\label{fig:figure_name}```, tables as ```\label{tab:table_name}``` or equations ```\label{eq:equation_name}```, this will help you during writing to remember to what object are adding the reference.
+
+## Cross reference from an external document
+Sometimes you need to cite and/or refer from a main document, such as you have a main article and a supplementary standalone document which uses the same citations and references from the main source.
+A more detailed guide has been described on [Overleaf](https://www.overleaf.com/learn/how-to/Cross_referencing_with_the_xr_package_in_Overleaf#How_to_use_xr_on_Overleaf).
+
+First, we need the ```xr``` package in both the two documents (i.e., ```main.tex``` and ```supplementary.tex```):
+```
+\usepackage{xr}
+```
+
+Then we create a new file called ```latexmkrc``` which acts like a function to compile the LaTeX files, in ```latexmkrc``` write the following function:
+```
+add_cus_dep( 'tex', 'aux', 0, 'makeexternaldocument' );
+
+sub makeexternaldocument {
+    if (!($root_filename eq $_[0]))
+    {
+        # FOR PDFLATEX
+        system( "latexmk -cd -pdf \"$_[0]\"" );
+
+        # FOR LATEX+DVIPDF
+        # system( "latexmk -cd \"$_[0]\"" );
+
+        # FOR XELATEX
+        # system( "latexmk -cd -xelatex \"$_[0]\"" );
+        
+        # FOR LUALATEX
+        # system( "latexmk -cd -lualatex \"$_[0]\"" );
+   }
+}
+```
+When the main file has been finished we can start writing the supplementary file (which can be an appendix, a summary or whatever).
+
+In the standalone file (i.e., our ```supplementary.tex```), which is the one that uses all the references and citations from the main document, add and edit the following code which acts like a bridge with the source file:
+```
+\makeatletter
+\newcommand*{\addFileDependency}[1]{
+  \typeout{(#1)}
+  \@addtofilelist{#1}
+  \IfFileExists{#1}{}{\typeout{No file #1.}}
+}
+\makeatother
+
+\newcommand*{\myexternaldocument}[1]{
+    \externaldocument{#1}
+    \addFileDependency{#1.tex}
+    \addFileDependency{#1.aux}
+}
+
+\myexternaldocument{main}
+```
+Now the supplementary file can be compiled without any error or warning.
 
 # Useful misc arguments
 Here you will find useful misc arguments:
