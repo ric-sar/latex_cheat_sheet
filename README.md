@@ -18,6 +18,11 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
   * [Highlight](#highlight)
     + [Bypass citation](#bypass-citation)
     + [Bypass reference](#bypass-reference)
+  * [Alignment](#alignment)
+    + [Left](#left)
+    + [Centre](#centre)
+    + [Right](#right)
+    + [Justify](#justify)
   * [Footnote](#footnote)
 - [Figure](#figure)
   * [Single figure](#single-figure)
@@ -98,6 +103,45 @@ While, highlighting references (like figures, tables or math equations) is much 
 ```
 \hl{Fig. {\ref{fig:figure_to_refer}}}
 ```
+
+## Alignment
+To align text we use the environment ```ragged2e``` which is easy and fast to use. The common command to align text is ```flush```
+
+### Left
+To align text on the left use ```flushleft```:
+```
+\begin{flushleft}
+Insert the text here.
+\end{flughleft}
+```
+
+### Centre
+To align text on the centre use ```center```:
+```
+\begin{center}
+Insert the text here.
+\end{center}
+```
+
+### Right
+To align text on the right use ```flushright```:
+```
+\begin{flushright}
+Insert the text here.
+\end{flughright}
+```
+
+### Justify
+To justify the tex use ```justify```:
+```
+\begin{justify}
+Insert the text here.
+\end{justify}
+```
+
+The following is an example of the above text alignments:
+![text_align](https://user-images.githubusercontent.com/82369153/227713862-66aefe71-2eed-4f87-9946-edcc89200e6b.png)
+
 
 ## Footnote
 To add a footnote just write the text inside the command ```\footnote{add footnote here}```, the footnote counter will be inserted automatically and the text will appear in the footer.
