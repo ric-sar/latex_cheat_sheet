@@ -18,11 +18,14 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
   * [Highlight](#highlight)
     + [Bypass citation](#bypass-citation)
     + [Bypass reference](#bypass-reference)
-  * [Alignment](#alignment)
+  * [Horizontal alignment](#horizontal-alignment)
     + [Left](#left)
     + [Centre](#centre)
     + [Right](#right)
     + [Justify](#justify)
+  * [Vertical alignment](#vertical-alignment)
+    + [Center](#center)
+    + [Bottom](#bottom)
   * [Footnote](#footnote)
 - [Figure](#figure)
   * [Single figure](#single-figure)
@@ -104,7 +107,7 @@ While, highlighting references (like figures, tables or math equations) is much 
 \hl{Fig. {\ref{fig:figure_to_refer}}}
 ```
 
-## Alignment
+## Horizontal alignment
 To align text we use the environment ```ragged2e``` which is easy and fast to use. The common command to align text is ```flush```
 
 ### Left
@@ -142,6 +145,26 @@ To justify the tex use ```justify```:
 The following is an example of the above text alignments:
 ![text_align](https://user-images.githubusercontent.com/82369153/227713862-66aefe71-2eed-4f87-9946-edcc89200e6b.png)
 
+## Vertical alignment
+Sometimes you need to align the text vertically:
+
+### Center
+To align the text at center of the page you will need ```hspace``` and ```vfill``` commands:
+```
+\hspace{0pt}
+\vfill
+Text
+\hspace{0pt}
+\vfill
+```
+
+### Bottom
+To align the text at the bottom of the page you will need ```hspace``` and ```vfill``` commands:
+```
+\hspace{0pt}
+\vfill
+Insert text here.
+```
 
 ## Footnote
 To add a footnote just write the text inside the command ```\footnote{add footnote here}```, the footnote counter will be inserted automatically and the text will appear in the footer.
