@@ -43,6 +43,7 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
 - [Bibliography](#bibliography)
   * [How to properly cite an arXiv contribution on IEEE](#how-to-properly-cite-an-arxiv-contribution-on-ieee)
 - [How to add citation and reference](#how-to-add-citation-and-reference)
+  * [Unbreakable space](#unbreakable-space)
   * [Cross reference from an external document](#cross-reference-from-an-external-document)
 - [Useful misc arguments](#useful-misc-arguments)
   * [Show page layout](#show-page-layout)
@@ -415,6 +416,11 @@ While, after having added your tables, figures, equations and so on, use the fol
 As a trick, I suggest to you to add to the command ```\label{}``` a little tag to distinguish between figures, tables, equations, and so on.
 E.g. figures can be labelled as ```\label{fig:figure_name}```, tables as ```\label{tab:table_name}``` or equations ```\label{eq:equation_name}```, this will help you during writing to remember to what object are adding the reference.
 
+## Unbreakable space
+Using the *tilde* character ```~``` (CTRL+0126 on Windows) before ```\cite{}``` or ```\ref{}``` place an unbreakable space between the text and the following citation or reference, this will help in the reading process without breaking it between lines. For example:
+```
+... as shown in Fig.~\ref{fig:sample} ...
+```
 
 ## Cross reference from an external document
 Sometimes you need to refer from a main document, such as you have a main article and a supplementary standalone document which uses some references from the main source.
