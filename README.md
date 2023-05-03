@@ -41,6 +41,7 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
   * [How to split math equation on multiple lines with split](#how-to-split-math-equation-on-multiple-lines-with-split)
   * [How to split math equation on multiple lines with align](#how-to-split-math-equation-on-multiple-lines-with-align)
 - [Bibliography](#bibliography)
+  + [Limiting the number of authors](#limiting-the-number-of-authors)
   * [How to properly cite an arXiv contribution on IEEE](#how-to-properly-cite-an-arxiv-contribution-on-ieee)
 - [How to add citation and reference](#how-to-add-citation-and-reference)
   * [Unbreakable space](#unbreakable-space)
@@ -387,6 +388,26 @@ Bibligraphy management is one of the best feature of LaTeX, just put these two l
 ```
 Create a new file ```refs.bib``` where you will add all your citation and LaTeX will compile the bibliography for you!
 Also, you can select within the seven bibliography styles without any effort: ```plain```, ```acm```, ```ieeetr```, ```alpha```, ```abbrv``` and ```siam```.
+
+## Limiting the number of authors
+To limit the number of authors in the bibliography by showing only a defined number of author names and by adding the abbrevation "and others" (*et al.* in latin), we need to manage directly parameters of BIBTeX style file (```.bst file```, according to [How to Use the IEEEtran BIBTEX Style](https://anorien.csc.warwick.ac.uk/mirrors/CTAN/macros/latex/contrib/IEEEtran/bibtex/IEEEtran_bst_HOWTO.pdf)).
+
+The parameters below set when to apply the abbrevation ```et al.```. In particular:
+* ```CTLuse_forced_etal``` forces the abbreviation;
+* ```CTLmax_names_forced_etal``` set the maximum number of authors without the abberviation;
+* ```CTLnames_show_etal``` set the number of authors before the abbreviation.
+
+The following list of parameters set the abbrevation ```et al.``` only for reference with more than two authors, when the number of authors exceed the limit of two (i.e., three authors) it applies the abbreviation starting from the first author name. These parameters should be placed at the beginning of your bibliography ```.bib``` file.
+```
+@IEEEtranBSTCTL{IEEEexample:BSTcontrol,
+CTLuse_forced_etal       = "yes",
+CTLmax_names_forced_etal = "2",
+CTLnames_show_etal       = "1" }
+```
+Then you need to add the following command in the main LaTeX file to apply changes to the BIBTeX style:
+```
+\bstctlcite{IEEEexample:BSTcontrol}
+```
 
 ## How to properly cite an arXiv contribution on IEEE
 If you have just started your adventure in the research field there is a high probabily that you have already encountered [arXiv](https://arxiv.org/). [arXiv](https://arxiv.org/) is a free distribution service and an open-access archive scholarly articles, although you can expoert directly the BibTeX formatted citation you need to properly cite the article by adding a the arXiv identifier to the note of the citation.
