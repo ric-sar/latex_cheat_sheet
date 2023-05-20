@@ -49,6 +49,7 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
   * [Unbreakable space](#unbreakable-space)
   * [Cross reference from an external document](#cross-reference-from-an-external-document)
 - [Useful misc arguments](#useful-misc-arguments)
+  * [Personal commands](#personal-commands)
   * [Show page layout](#show-page-layout)
   
 ---
@@ -540,6 +541,13 @@ The command ```\myexternaldocument{main}``` specifies the main document for refe
 
 # Useful misc arguments
 Here you will find useful misc arguments:
+
+## Personal commands
+Sometimes you need to create your personal commands, LaTeX provides you a simple setup for the most diverse functions, for example: are you tired to make text in bold used as TODO reminder? Easy, create a new command with ```\newcommand{\command_name}``` with your preferrend ```\command_name``` and apply whatever you want:
+```
+\newcommand{\todo} [1] {\textcolor{Red}{\textbf{TODO:} #1}}
+```
+The new ```\todo``` command will automatically type TODO followed by the text red and bold.
 
 ## Show page layout
 While writing a paper (for instance in the traditional two-column layout) we might be interested if we can make better styling choice by knowing the margin of the chosen template. In this case the package showframe will help us:
