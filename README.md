@@ -38,6 +38,7 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
 - [Table](#table)
   * [Simple table](#simple-table)
   * [Complex table](#complex-table)
+  * [Value convention](#value-convention)
 - [Math](#math)
   * [How to split math equation on multiple lines with split](#how-to-split-math-equation-on-multiple-lines-with-split)
   * [How to split math equation on multiple lines with align](#how-to-split-math-equation-on-multiple-lines-with-align)
@@ -342,6 +343,39 @@ Now, let's imagine to build and fill a more complex and full-data table, the wor
 Tables are not easy to manage, I recommend to use the following web-tools (for instance you can upload or copy-paste the data from Excel files):
 * [LaTeX Tables Editor](https://www.latex-tables.com/)
 * [Tables Generator](https://www.tablesgenerator.com/)
+
+### Value convention
+If you need to change typographic conventions with the same input syntax in a consistent way without replacing values directly, i.e., by using SI convention, you can use ```siunitx``` package. This package allows you to process numbers or to apply SI conventions to table. First of all you need to import the package correctly:
+```
+\usepackage{siunitx}
+```
+For example if you want to align all the values of a column by the comma, set to the center and modify the column-width you need to create a setup:
+```
+\sisetup{
+    table-format=2.2,              % set value format
+    table-number-alignment=center, % set alingment
+    table-column-width=50pt        % set column width
+}
+```
+While, in the table you will need to specify the alternative column-type by ```S```, i.e., if you need to modify only the second column of the table you will have:
+```
+...
+\begin{tabular}{l|S|c}
+...
+```
+This table provides values of the first column left-aligned, the second column will take the ```siunitx``` configuration, the third column will be aligned at the center.
+
+Alternatively, instead of using a global configuration, you can over impose a single configuration per column-type, i.e.:
+```
+...
+\begin{tabular}{
+                c
+                S[table-format=2.2]
+                S[table-column-width=50pt]
+}
+...
+```
+In this case, the value format is applied only on the second column while the third has only the column-width property.
 
 # Math
 As for the tables, sometimes you need a visual tool to write math equations, the following links will help you in the process:
