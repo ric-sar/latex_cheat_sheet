@@ -35,6 +35,7 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
     + [2x2](#2x2)
     + [2x2 one caption per row](#2x2-one-caption-per-row)
     + [2x2 one caption per col](#2x2-one-caption-per-col)
+    + [Grid-like layout](#grid-like-layout)
 - [Table](#table)
   * [Simple table](#simple-table)
   * [Complex table](#complex-table)
@@ -314,6 +315,42 @@ In the following example more sub figures have been added by using the ```\subfi
     \caption{Insert main caption here.}
     \label{fig:figure_name}
   \end{figure}
+```
+
+#### Grid-like layout
+Another complex figure arrangement is the grid-like layout, where you need captions for rows and columns. There are many methods to create a grid-like layout, especially by using a table, in the following example we will directly use figures captions for rows and columns.
+The main difference between the other figure layouts is related to:
+* ```\settoheight{\tempdim}``` which sets a temporary dimension for each cell of the grid;
+* ```\rotatebox{90}{\makebox``` which creates the row-caption inside a box rotated by 90 degrees;
+* ```\makebox``` which creates column-caption.
+
+```
+\begin{figure}[htbp]
+ \settoheight{\tempdim}{\includegraphics[width=0.3\textwidth]{example-image-a}}
+ \rotatebox{90}{\makebox[\tempdim]{First row}}\hfil
+ \includegraphics[width=0.3\textwidth]{example-image-a}\hfil
+ \includegraphics[width=0.3\textwidth]{example-image-b}\hfil
+ \includegraphics[width=0.3\textwidth]{example-image-c}
+
+ \rotatebox{90}{\makebox[\tempdim]{Second row}}\hfil
+ \includegraphics[width=0.3\textwidth]{example-image-a}\hfil
+ \includegraphics[width=0.3\textwidth]{example-image-b}\hfil
+ \includegraphics[width=0.3\textwidth]{example-image-c}
+
+ \rotatebox{90}{\makebox[\tempdim]{Third row}}\hfil
+ \includegraphics[width=0.3\textwidth]{example-image-a}\hfil
+ \includegraphics[width=0.3\textwidth]{example-image-b}\hfil
+ \includegraphics[width=0.3\textwidth]{example-image-c}
+
+ \medskip
+ \hspace{0.65\baselineskip}\hfil
+ \makebox[0.3\textwidth]{First column}\hfil
+ \makebox[0.3\textwidth]{Second column}\hfil
+ \makebox[0.3\textwidth]{Third column}
+
+ \caption{Grid-like figure.}
+ \label{fig:grid_like}
+\end{figure}
 ```
 
 # Table
