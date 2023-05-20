@@ -547,7 +547,7 @@ Sometimes you need to create your personal commands, LaTeX provides you a simple
 ```
 \newcommand{\todo} [1] {\textcolor{Red}{\textbf{TODO:} #1}}
 ```
-The new ```\todo``` command will automatically type TODO followed by the text red and bold.
+The new ```\todo``` command will automatically type "TODO:" followed by the text red and bold.
 
 ## Show page layout
 While writing a paper (for instance in the traditional two-column layout) we might be interested if we can make better styling choice by knowing the margin of the chosen template. In this case the package showframe will help us:
