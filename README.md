@@ -319,6 +319,9 @@ In the following example more sub figures have been added by using the ```\subfi
 
 #### Grid-like layout
 Another complex figure arrangement is the grid-like layout, where you need captions for rows and columns. There are many methods to create a grid-like layout, especially by using a table, in the following example we will directly use figures captions for rows and columns.
+
+![figure_grid_like_layout](https://github.com/ric-sar/latex_cheat_sheet/assets/82369153/4bc68095-10a9-4700-b5f0-fc528f41050b)
+
 The main difference between the other figure layouts is related to:
 * ```\settoheight{\tempdim}``` which sets a temporary dimension for each cell of the grid;
 * ```\rotatebox{90}{\makebox``` which creates the row-caption inside a box rotated by 90 degrees;
