@@ -26,6 +26,7 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
   * [Vertical alignment](#vertical-alignment)
     + [Center](#center)
     + [Bottom](#bottom)
+  * [Invisible text](#invisible-text)
   * [Footnote](#footnote)
 - [Figure](#figure)
   * [Single figure](#single-figure)
@@ -168,6 +169,13 @@ To align the text at the bottom of the page you will need ```hspace``` and ```vf
 \vfill
 Insert text here.
 ```
+
+## Invisible text
+Sometimes you need to fill space with an invisible text, like a character that can be used to apply distance in text. By using the command ```phantom``` followed by the argument (i.e., the invisible text):
+```
+Some text here, this is a value\phantom{-}blablabla.
+```
+
 
 ## Footnote
 To add a footnote just write the text inside the command ```\footnote{add footnote here}```, the footnote counter will be inserted automatically and the text will appear in the footer.
