@@ -44,6 +44,7 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
   * [How to split math equation on multiple lines with split](#how-to-split-math-equation-on-multiple-lines-with-split)
   * [How to split math equation on multiple lines with align](#how-to-split-math-equation-on-multiple-lines-with-align)
 - [Bibliography](#bibliography)
+  + [The BibTeX format](#the-bibtex-format)
   + [Limiting the number of authors](#limiting-the-number-of-authors)
   * [How to properly cite an arXiv contribution on IEEE](#how-to-properly-cite-an-arxiv-contribution-on-ieee)
 - [How to add citation and reference](#how-to-add-citation-and-reference)
@@ -471,6 +472,28 @@ Bibligraphy management is one of the best feature of LaTeX, just put these two l
 ```
 Create a new file ```refs.bib``` where you will add all your citation and LaTeX will compile the bibliography for you!
 Also, you can select within the seven bibliography styles without any effort: ```plain```, ```acm```, ```ieeetr```, ```alpha```, ```abbrv``` and ```siam```.
+
+## The BibTeX format
+The references are stored in a BibTeX ```.bib``` file. The ```.bib``` file consists in many entries:
+* **entry type**: can be a book, article, inproceedings (i.e., conference paper), misc, and so on;
+* **citekey** which is the unique identifier of the entry, used to for citation with the command ```\cite{}```;
+* **title** identifies the title of the entry;
+* **author** which is the author list;
+* **publisher**;
+* **DOI**, **ISSN**, **ISBN** or **URL**, usually identifies the digital object 
+* **year**, **date**, **month**, and so on...
+
+The following is a classical reference entry:
+```
+@misc{vaswani2017attention,
+      title={Attention Is All You Need}, 
+      author={Ashish Vaswani and Noam Shazeer and Niki Parmar and Jakob Uszkoreit and Llion Jones and Aidan N. Gomez and Lukasz Kaiser and Illia Polosukhin},
+      year={2017},
+}
+```
+ 
+**Recommended read**
+* [The BibTeX forrmat](https://www.bibtex.com/g/bibtex-format/)
 
 ## Limiting the number of authors
 To limit the number of authors in the bibliography by showing only a defined number of author names and by adding the abbrevation "and others" (*et al.* in latin), we need to manage directly parameters of BIBTeX style file (```.bst file```, according to [How to Use the IEEEtran BIBTEX Style](https://anorien.csc.warwick.ac.uk/mirrors/CTAN/macros/latex/contrib/IEEEtran/bibtex/IEEEtran_bst_HOWTO.pdf)).
