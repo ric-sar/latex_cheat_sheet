@@ -510,7 +510,7 @@ CTLuse_forced_etal       = "yes",
 CTLmax_names_forced_etal = "2",
 CTLnames_show_etal       = "1" }
 ```
-Then you need to add the following command in the main LaTeX file to apply changes to the BIBTeX style:
+Then you need to add the following command right after ```\begin{document}``` in the main LaTeX file to apply changes to the BIBTeX style:
 ```
 \bstctlcite{IEEEexample:BSTcontrol}
 ```
