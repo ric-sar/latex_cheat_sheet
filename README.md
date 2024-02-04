@@ -28,6 +28,7 @@ For starters, I recommend to read first <a href="https://www.overleaf.com/learn/
     + [Bottom](#bottom)
   * [Invisible text](#invisible-text)
   * [Footnote](#footnote)
+  * [Hyperlink](#hyperlink)
 - [Figure](#figure)
   * [Single figure](#single-figure)
   * [Multiple sub figures](#multiple-sub-figures)
@@ -183,6 +184,28 @@ Some text here, this is a value\phantom{-}blablabla.
 
 ## Footnote
 To add a footnote just write the text inside the command ```\footnote{add footnote here}```, the footnote counter will be inserted automatically and the text will appear in the footer.
+If num is not specified, the footnote counter is incremented and its value is used.
+
+But sometimes you need to place a numbered footnote by using the optional ```num``` argument to change the footnote number ```\footnote[num]{text}```.
+
+
+## Hyperlink
+To add an hyperlink you need to import the package ```hyperref``` which handles cross-reference in the text. Hyperref can be setup with the following setings, here a short list of options:
+```
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan
+}
+```
+where:
+* ```colorlinks``` is true, all the links will be coloured in red,
+* ```linkcolor``` internal links are coloured in blue;
+* ```urlcolor``` are all the links to websites and are coloured in cyan.
+
+For example, if we add an hyperlink to an external webiste (i.e., Google) we have to specify the target url and the clickable text as arguments of ```\href``` command:
+```\href{http://www.google.com}{Go to Google}```
+
 
 # Figure
 Some read the text others look at the pictures. And we should be able to plot figures on a LaTeX document:
